@@ -64,7 +64,7 @@ class Login extends Component {
   handleSignMessage = ({ publicAddress, nonce }) => {
     return new Promise((resolve, reject) =>
       web3.personal.sign(
-        web3.fromUtf8(`I am signing my one-time nonce: ${nonce}`),
+        web3.fromUtf8(`I am signing in to Blockcities with my one-time nonce: ${nonce}`),
         publicAddress,
         (err, signature) => {
           if (err) return reject(err);
@@ -94,12 +94,12 @@ class Login extends Component {
         <button className="Login-button Login-mm" onClick={this.handleClick}>
           {loading ? 'Loading...' : 'Login with MetaMask'}
         </button>
-        <button className="Login-button Login-fb" disabled>
-          Login with Facebook
-        </button>
-        <button className="Login-button Login-email" disabled>
-          Login with Email
-        </button>
+//         <button className="Login-button Login-fb" disabled>
+//           Login with Facebook
+//         </button>
+//         <button className="Login-button Login-email" disabled>
+//           Login with Email
+//         </button>
       </div>
     );
   }
